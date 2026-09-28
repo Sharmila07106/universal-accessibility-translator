@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Build output
+frontend/dist/
+backend/target/
+*.class
+*.jar
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Secrets - never commit these
+.env
+.env.*
+!.env.example
+
+# IDE and OS files
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
