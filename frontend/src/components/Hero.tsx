@@ -1,5 +1,6 @@
 import React, { Suspense, useEffect, useState } from 'react';
 import ErrorBoundary from './ErrorBoundary';
+import { brand } from '../config/brand';
 
 const ThreeScene = React.lazy(() => import('./three/ThreeScene'));
 
@@ -32,14 +33,14 @@ export default function Hero() {
         </div>
         
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-brand-text tracking-tighter mb-6 leading-[1.1]">
-          Communicate without <br className="hidden sm:block" />
+          Connecting people <br className="hidden sm:block" />
           <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">
-            barriers.
+            beyond words.
           </span>
         </h1>
         
         <p className="text-xl sm:text-2xl text-brand-text-muted max-w-2xl leading-relaxed">
-          Setu connects people through voice, video, subtitles and sign language in real time.
+          {brand.description}
         </p>
       </div>
     </section>

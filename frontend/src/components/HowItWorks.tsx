@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { brand } from '../config/brand';
 
 const steps = [
   {
@@ -6,7 +7,7 @@ const steps = [
     description: 'Express yourself naturally in your preferred language or modality.',
   },
   {
-    title: 'Setu understands',
+    title: `${brand.name} understands`,
     description: 'Advanced models process your communication in real time.',
   },
   {

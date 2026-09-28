@@ -1,11 +1,21 @@
+import { useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import HowItWorks from './components/HowItWorks';
 import Features from './components/Features';
 import TrustSection from './components/TrustSection';
 import Footer from './components/Footer';
+import { brand } from './config/brand';
 
 export default function App() {
+  useEffect(() => {
+    document.title = brand.taglineFull;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', brand.description);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col relative transition-colors duration-300">
       <div className="aurora-bg" aria-hidden="true" />

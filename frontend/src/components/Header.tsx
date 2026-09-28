@@ -1,5 +1,6 @@
 import Logo from './Logo';
 import { useTheme } from '../hooks/useTheme';
+import { brand } from '../config/brand';
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
@@ -7,8 +8,8 @@ export default function Header() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 glass-panel border-t-0 border-x-0 border-b border-brand-border/40">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="#top" className="rounded-xl focus-visible:outline-2 focus-visible:outline-brand-primary outline-offset-4" aria-label="Setu Home">
-          <Logo size={36} />
+        <a href="#top" className="rounded-xl focus-visible:outline-2 focus-visible:outline-brand-primary outline-offset-4" aria-label={`${brand.name} Home`}>
+          <Logo size={24} />
         </a>
         
         <nav className="hidden md:flex items-center gap-8 font-medium text-sm" aria-label="Main navigation">

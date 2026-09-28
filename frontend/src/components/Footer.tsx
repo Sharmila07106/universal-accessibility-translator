@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { checkHealth } from '../services/api';
 import Logo from './Logo';
+import { brand } from '../config/brand';
 
 export default function Footer() {
   const [status, setStatus] = useState<string>('Checking backend...');
@@ -26,7 +27,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="flex flex-col items-center md:items-start gap-4">
           <Logo size={32} />
-          <p className="text-sm font-medium text-brand-text-muted">Every voice. Every sign. Connected.</p>
+          <p className="text-sm font-medium text-brand-text-muted">{brand.taglineShort}</p>
         </div>
 
         <div 
