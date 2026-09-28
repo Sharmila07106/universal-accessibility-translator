@@ -1,6 +1,8 @@
-# Universal Accessibility Translator
+# HumanBridge
 
-A real-time communication platform that lets people with different communication abilities and language preferences communicate through voice, video, text, subtitles and sign language.
+**Connecting People Beyond Words**
+
+A universal communication platform bridging people who communicate in different ways: voice, video, text, real-time subtitles, sign language, spoken-language translation, accessibility preferences, context-aware and multimodal communication.
 
 ## Planned structure
 
@@ -12,4 +14,4 @@ A real-time communication platform that lets people with different communication
 
 ## Status
 
-Project setup in progress.
+Project is in early development.
