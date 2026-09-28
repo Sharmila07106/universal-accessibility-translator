@@ -1,18 +1,97 @@
 @import "tailwindcss";
+@import "@fontsource-variable/inter";
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@theme {
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-primary-hover: var(--brand-primary-hover);
+  --color-brand-accent: var(--brand-accent);
+  
+  --color-brand-bg: var(--brand-bg);
+  --color-brand-surface: var(--brand-surface);
+  
+  --color-brand-text: var(--brand-text);
+  --color-brand-text-muted: var(--brand-text-muted);
+  --color-brand-border: var(--brand-border);
+  
+  --font-sans: "Inter Variable", system-ui, sans-serif;
+  
+  /* Animations */
+  --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
+  --animate-draw-arch: draw-arch 1.5s ease-out forwards;
 }
 
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --brand-primary: #4338CA;
+    --brand-primary-hover: #3730A3;
+    --brand-accent: #0D9488;
+    
+    --brand-bg: #F8FAFC;
+    --brand-surface: #FFFFFF;
+    
+    --brand-text: #0F172A;
+    --brand-text-muted: #475569;
+    --brand-border: #E2E8F0;
   }
+
+  .dark {
+    --brand-primary: #818CF8;
+    --brand-primary-hover: #6366F1;
+    --brand-accent: #2DD4BF;
+    
+    --brand-bg: #0F172A;
+    --brand-surface: #1E293B;
+    
+    --brand-text: #F8FAFC;
+    --brand-text-muted: #94A3B8;
+    --brand-border: #334155;
+  }
+  
+  html {
+    @apply antialiased text-brand-text bg-brand-bg;
+    scroll-behavior: smooth;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes draw-arch {
+  0% {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+  }
+}
+
+.logo-arch {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: draw-arch 1.5s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+/* Base styles for outline to ensure a11y focus */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-brand-primary;
 }
